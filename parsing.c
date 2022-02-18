@@ -14,13 +14,14 @@
 
 char	*ft_read(int fd)
 {
-	char	buf[1];
+	char	buf[2];
 	char	*str;
 	int		ret;
 
 	str = ft_strdup("");
 	if (!str)
 		return (NULL);
+	buf[1] = 0;
 	ret = read(fd, buf, 1);
 	while (ret)
 	{

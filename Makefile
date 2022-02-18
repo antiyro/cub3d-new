@@ -17,11 +17,9 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): mlx $(OBJ)
-			$(CC) $(CFLAGS) -I mlx_linux $(OBJ) -Lmlx_linux -lm -lmlx -lXext -lX11 -o $(NAME)
-
-mlx:
+$(NAME): 	$(OBJ)
 			make -C mlx_linux
+			$(CC) $(CFLAGS) -I mlx_linux $(OBJ) -Lmlx_linux -lm -lmlx -lXext -lX11 -o $(NAME)
 
 clean:
 			rm -f $(OBJ)
