@@ -24,6 +24,8 @@ int	check_north(char *line, t_ctrl *ctrl)
 	if (line[i] == 'N' && line[i + 1] == 'O')
 	{
 		i += 2;
+		if (line[i] == '.')
+			return (FAILURE);
 		while (line[i] == ' ')
 			i++;
 		if (line[i] == '.' && line[i + 1] == '/' && line[i + 2])
@@ -49,6 +51,8 @@ int	check_south(char *line, t_ctrl *ctrl)
 	if (line[i] == 'S' && line[i + 1] == 'O')
 	{
 		i += 2;
+		if (line[i] == '.')
+			return (FAILURE);
 		while (line[i] == ' ')
 			i++;
 		if (line[i] == '.' && line[i + 1] == '/' && line[i + 2])
@@ -74,6 +78,8 @@ int	check_west(char *line, t_ctrl *ctrl)
 	if (line[i] == 'W' && line[i + 1] == 'E')
 	{
 		i += 2;
+		if (line[i] == '.')
+			return (FAILURE);
 		while (line[i] == ' ')
 			i++;
 		if (line[i] == '.' && line[i + 1] == '/' && line[i + 2])
@@ -99,6 +105,8 @@ int	check_east(char *line, t_ctrl *ctrl)
 	if (line[i] == 'E' && line[i + 1] == 'A')
 	{
 		i += 2;
+		if (line[i] == '.')
+			return (FAILURE);
 		while (line[i] == ' ')
 			i++;
 		if (line[i] == '.' && line[i + 1] == '/' && line[i + 2])
