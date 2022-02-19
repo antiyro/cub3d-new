@@ -33,6 +33,8 @@ int	check_north(char *line, t_ctrl *ctrl)
 			ctrl->no_path = ft_strdup(line + (i + 2));
 			if (!ctrl->no_path)
 				return (FAILURE);
+			if (open(ctrl->no_path, O_RDONLY) == -1)
+				return (FAILURE);
 			return (SUCCESS);
 		}
 	}
@@ -59,6 +61,8 @@ int	check_south(char *line, t_ctrl *ctrl)
 		{
 			ctrl->so_path = ft_strdup(line + (i + 2));
 			if (!ctrl->so_path)
+				return (FAILURE);
+			if (open(ctrl->so_path, O_RDONLY) == -1)
 				return (FAILURE);
 			return (SUCCESS);
 		}
@@ -87,6 +91,8 @@ int	check_west(char *line, t_ctrl *ctrl)
 			ctrl->we_path = ft_strdup(line + (i + 2));
 			if (!ctrl->we_path)
 				return (FAILURE);
+			if (open(ctrl->we_path, O_RDONLY) == -1)
+				return (FAILURE);
 			return (SUCCESS);
 		}
 	}
@@ -113,6 +119,8 @@ int	check_east(char *line, t_ctrl *ctrl)
 		{
 			ctrl->ea_path = ft_strdup(line + (i + 2));
 			if (!ctrl->ea_path)
+				return (FAILURE);
+			if (open(ctrl->ea_path, O_RDONLY) == -1)
 				return (FAILURE);
 			return (SUCCESS);
 		}
