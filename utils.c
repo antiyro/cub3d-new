@@ -56,3 +56,20 @@ char	*ft_strdup(char const *s)
 	str[i] = 0;
 	return (str);
 }
+
+int	ft_is_ascii(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 0 && str[i] <= 126)
+			i++;
+		else if (str[i] == 127)
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}

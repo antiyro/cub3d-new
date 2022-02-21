@@ -28,6 +28,11 @@ char	*ft_read(int fd)
 		if (ret == -1)
 			return (NULL);
 		str = ft_strjoin(str, buf);
+		if (!ft_is_ascii(str))
+		{
+			free(str);
+			return (NULL);
+		}
 		if (!str)
 			return (NULL);
 		ret = read(fd, buf, 1);
